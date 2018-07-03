@@ -16,6 +16,10 @@ from places_utils import preprocess_input
 app = Flask(__name__)
 model = None
 
+@app.route('/')
+def Hello():
+    return 'Hello'
+
 
 
 # End-point to upload an image and call predict class for it
@@ -95,4 +99,4 @@ def predict_again():
 if __name__ == '__main__':
     app.secret_key = 'abcakjlc-b@weubi_2b3!2@'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(host='0.0.0.0', port=8080)
+    app.run()
